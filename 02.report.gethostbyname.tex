@@ -1,0 +1,58 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{tabularx}
+\usepackage{amsmath}  
+\usepackage{graphicx}
+\usepackage[margin=1in,letterpaper]{geometry} 
+\usepackage{cite}
+\usepackage[final]{hyperref}
+\usepackage{listings}
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+\begin{document}
+
+\title{Report 2}
+\author{Agwu Chinedu}
+\date{\today}
+\maketitle
+
+
+\section{Task}
+Use gethostbyname() to resolve a domain name
+
+\begin{itemize}
+\item From program’s arguments
+\item From STDIN if there’s no argument
+\item Show the resolved IP address
+\end{itemize}
+
+
+\section{Resul and Codet}
+The C program code is found with the .tex file on github
+The code results in the IP address of usth
+\begin{figure}
+        \centering \includegraphics[ height=0.35\columnwidth]{report2.png}
+
+        \caption{  \label{fig:samplesetup}
+                USTH IP address Results as well as the domain name. }
+\end{figure}
+
+\end{document}
