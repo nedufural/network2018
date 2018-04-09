@@ -1,0 +1,54 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{tabularx}
+\usepackage{amsmath}  
+\usepackage{graphicx}
+\usepackage[margin=1in,letterpaper]{geometry} 
+\usepackage{cite}
+\usepackage[final]{hyperref}
+\usepackage{listings}
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+\begin{document}
+
+\title{Report }
+\author{Agwu Chinedu}
+\date{8th April 2018}
+\maketitle
+
+
+\section{Task}
+This project is to implement a centralized chat system, similar to Internet
+Relay Chat (IRC). In such a system, client-to-client text messages must first be passed to a
+centralized server, then the server forwards the messages to the destination client
+\section{Description of Solution}
+The Server detects connection of the client as well as identifies the client's IP and Port number. The server fork() creates a child process each time a new client connects.
+The Client sends a message to the server and the servers responds by sending the message to the clients connected.
+\section{Result}
+The result show the connection of 2 clients, more clients can be connected but 2 clients are used in this result.
+\begin{figure}
+        \centering \includegraphics[ height=0.35\columnwidth]{results.png}
+
+        \caption{  \label{fig:samplesetup}
+                Multiple Clients and a Server message and responds}
+\end{figure}
+
+\end{document}
