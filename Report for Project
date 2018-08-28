@@ -40,15 +40,29 @@ This project is to implement a centralized chat system, similar to Internet
 Relay Chat (IRC). In such a system, client-to-client text messages must first be passed to a
 centralized server, then the server forwards the messages to the destination client
 \section{Description of Solution}
-The Server detects connection of the client as well as identifies the client's IP and Port number. The server fork() creates a child process each time a new client connects.
-The Client sends a message to the server and the servers responds by sending the message to the clients connected.
-\section{Result}
-The result show the connection of 2 clients, more clients can be connected but 2 clients are used in this result.
-\begin{figure}
-        \centering \includegraphics[ height=0.35\columnwidth]{results.png}
+The Server detects connection of the client as well as identifies the client's IP and Port number. The Client sends a message to the server and the servers responds by sending the message to the clients con
+nected.
 
-        \caption{  \label{fig:samplesetup}
-                Multiple Clients and a Server message and responds}
-\end{figure}
+\subsection{Client Side}
+The client side has the following methods:
+\begin{itemize}
+\item *user-message-input () : for user input with pipe[1] STDIN
+\item void *connection controller (): handles socket connection and pipe reading [0]
+\item void getHostName (char *hostname) :check valid host name
+\item int main() : The main method of the client side implements the non blocking using ON\_NBLOCK and it implements and creating the threads to handle connections and inputs from clients. The user input is passed through the pipe by the connection handling thread.
+\end{itemize}
+
+\subsection{Server Side}
+The  server side after listening binding and creating a new connection. Implements the following:
+\begin{itemize} 
+\item The fd\_set for declaration of the set
+\item FD\_ZERO for clear the set
+\item FD\_SET and add listening sockfd to set 
+\item MAX\_NUMBER\_CLIENTS( which i defined to be 50 clients). 
+\end{itemize}
+Non blocking is also implemented. The server fork() creates a child process each time a new client connects. Child tp parent pipe is represented with C\_P[0](reading from client to server C\_P[1] (when messages from Client to Server)while Parent to child pipe is represented by P\_C[0]  or P\_C[1] (when messages from Server to client) .
+
+\section{Result}
+The result a full communication between clients and server as well as clients to client is achieved.
 
 \end{document}
